@@ -1,0 +1,147 @@
+carterone {
+	font-family:'Carter One', serif;
+	font-size:16pt;
+	font-weight:400;
+	line-height:1.5;
+}
+
+.mystyle {
+}
+
+/*
+      Created by Keith Donegan of Code-Sucks.com
+	  
+	  E-Mail: Keithdonegan@gmail.com
+	  
+	  You can do whatever you want with these layouts,
+	  but it would be greatly appreciated if you gave a link
+	  back to http://www.code-sucks.com
+	  
+*/
+
+* {
+	background-color:#E6E6E6;
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+}
+
+#wrapper {
+	width:922px;
+	margin:0px auto 0px auto;
+}
+
+#header {
+	width:900px;
+	color:#333333;
+	height:200px;
+	background-image:url(images/calisio.jpeg);
+	background-repeat-x:no-repeat;
+	background-repeat-y:no-repeat;
+	background-repeat:no-repeat;
+	background-attachment:initial;
+	background-position:initial initial;
+	background-position-x:initial;
+	background-position-y:initial;
+	background-origin:initial;
+	background-clip:initial;
+	background-color:#BD9C8C;
+	background-size:100%;
+	font-size:24pt;
+	font-style:inherit;
+	font-variant:inherit;
+	font-weight:inherit;
+	line-height:inherit;
+	font-family:'Carter One';
+	font-stretch:inherit;
+	border-image-source:initial;
+	border-image-slice:initial;
+	border-image-width:initial;
+	border-image-outset:initial;
+	border-image-repeat:initial;
+	text-shadow:rgb(255, 255, 255) 0px 0px 8px;
+	-webkit-border-top-left-radius:10px;
+	border-top-left-radius:10px;
+	-o-border-top-left-radius:10px;
+	-ms-border-top-left-radius:10px;
+	-moz-border-radius-topleft:10px;
+	-webkit-border-top-right-radius:10px;
+	border-top-right-radius:10px;
+	-o-border-top-right-radius:10px;
+	-ms-border-top-right-radius:10px;
+	-moz-border-radius-topright:10px;
+	border:1px solid #000000;
+	margin:10px 0px 5px 0px;
+	padding:10px;
+}
+
+#navigation {
+	width:900px;
+	color:#F2F2E6;
+	background-repeat-x:no-repeat;
+	background-repeat-y:no-repeat;
+	background-repeat:no-repeat;
+	background-attachment:initial;
+	background-position:initial initial;
+	background-position-x:initial;
+	background-position-y:initial;
+	background-origin:initial;
+	background-clip:initial;
+	background-color:#4C4C4C;
+	background-size:initial;
+	border-image-source:initial;
+	border-image-slice:initial;
+	border-image-width:initial;
+	border-image-outset:initial;
+	border-image-repeat:initial;
+	font-family:'Carter One';
+	font-size:inherit;
+	font-style:inherit;
+	font-variant:inherit;
+	font-weight:inherit;
+	line-height:inherit;
+	border:1px solid #000000;
+	margin:0px 0px 5px 0px;
+	padding:10px;
+}
+
+#content {
+	width:900px;
+	color:#333333;
+	background-image:initial;
+	background-repeat-x:no-repeat;
+	background-repeat-y:no-repeat;
+	background-repeat:no-repeat;
+	background-attachment:initial;
+	background-position:initial initial;
+	background-position-x:initial;
+	background-position-y:initial;
+	background-origin:initial;
+	background-clip:initial;
+	background-color:#F2F2E6;
+	background-size:initial;
+	height:350px;
+	border-image-source:initial;
+	border-image-slice:initial;
+	border-image-width:initial;
+	border-image-outset:initial;
+	border-image-repeat:initial;
+	-webkit-border-bottom-left-radius:10px;
+	border-bottom-left-radius:10px;
+	-o-border-bottom-left-radius:10px;
+	-ms-border-bottom-left-radius:10px;
+	-moz-border-radius-bottomleft:10px;
+	-webkit-border-bottom-right-radius:10px;
+	border-bottom-right-radius:10px;
+	-o-border-bottom-right-radius:10px;
+	-ms-border-bottom-right-radius:10px;
+	-moz-border-radius-bottomright:10px;
+	border:1px solid #000000;
+	margin:0px 0px 5px 0px;
+	padding:10px;
+}
+
