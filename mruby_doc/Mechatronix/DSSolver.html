@@ -1,0 +1,837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Mechatronix::DSSolver
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Mechatronix/DSSolver.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Mechatronix.html" title="Mechatronix (module)">Mechatronix</a></span></span>
+     &raquo; 
+    <span class="title">DSSolver</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Mechatronix::DSSolver
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span></li>
+          
+            <li class="next">Mechatronix::DSSolver</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">mrblib/mechatronix_nocompile.rb<span class="defines">,<br />
+  mrbgems/mruby-mechatronix/mrblib/mechatronix.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Hook class for Dynamical Systems solver</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ode_solution-instance_method" title="#ode_solution (instance method)">- (Object) <strong>ode_solution</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute ode_solution.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stationary_solution-instance_method" title="#stationary_solution (instance method)">- (Object) <strong>stationary_solution</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute stationary_solution.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="OCPSolver.html#data-instance_method" title="Mechatronix::OCPSolver#data (method)">#data</a></span>, <span class='object_link'><a href="OCPSolver.html#dylib_path-instance_method" title="Mechatronix::OCPSolver#dylib_path (method)">#dylib_path</a></span>, <span class='object_link'><a href="OCPSolver.html#id-instance_method" title="Mechatronix::OCPSolver#id (method)">#id</a></span>, <span class='object_link'><a href="OCPSolver.html#model_name-instance_method" title="Mechatronix::OCPSolver#model_name (method)">#model_name</a></span>, <span class='object_link'><a href="OCPSolver.html#ocp_solution-instance_method" title="Mechatronix::OCPSolver#ocp_solution (method)">#ocp_solution</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_eigenvalues-instance_method" title="#write_eigenvalues (instance method)">- (Object) <strong>write_eigenvalues</strong>(filename, desc = &quot;&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Writes the DS eigenvalues to a file, as a space separated table with column names in the first line.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_eigenvectors-instance_method" title="#write_eigenvectors (instance method)">- (Object) <strong>write_eigenvectors</strong>(filename, desc = &quot;&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Writes the DS igenvectors to a file, as a space separated table with column names in the first line.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_ode_solution-instance_method" title="#write_ode_solution (instance method)">- (Object) <strong>write_ode_solution</strong>(filename, desc = &quot;&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Writes the DS ODE solution to a file, as a space separated table with column names in the first line.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_stationary_result-instance_method" title="#write_stationary_result (instance method)">- (Object) <strong>write_stationary_result</strong>(filename, desc = &quot;&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Writes the DS stationary solution to a file, as a space separated table with column names in the first line.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="OCPSolver.html#initialize-instance_method" title="Mechatronix::OCPSolver#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="OCPSolver.html#length-instance_method" title="Mechatronix::OCPSolver#length (method)">#length</a></span>, <span class='object_link'><a href="OCPSolver.html#load_solution-instance_method" title="Mechatronix::OCPSolver#load_solution (method)">#load_solution</a></span>, <span class='object_link'><a href="OCPSolver.html#partial_table-instance_method" title="Mechatronix::OCPSolver#partial_table (method)">#partial_table</a></span>, <span class='object_link'><a href="OCPSolver.html#save_solution-instance_method" title="Mechatronix::OCPSolver#save_solution (method)">#save_solution</a></span>, <span class='object_link'><a href="OCPSolver.html#write_ocp_solution-instance_method" title="Mechatronix::OCPSolver#write_ocp_solution (method)">#write_ocp_solution</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="OCPSolver.html#initialize-instance_method" title="Mechatronix::OCPSolver#initialize (method)">Mechatronix::OCPSolver</a></span></p>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="ode_solution=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="ode_solution-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ode_solution</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute ode_solution</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ode_solution'>ode_solution</span>
+  <span class='ivar'>@ode_solution</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="stationary_solution=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="stationary_solution-instance_method">
+  
+    - (<tt>Object</tt>) <strong>stationary_solution</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the value of attribute stationary_solution</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_stationary_solution'>stationary_solution</span>
+  <span class='ivar'>@stationary_solution</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="write_eigenvalues-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_eigenvalues</strong>(filename, desc = &quot;&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Writes the DS eigenvalues to a file, as a space separated table
+with column names in the first line. The file begins with an initial
+comment line containing the present date and the library version.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>path of the output file to be written</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>desc</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>optional description appended to the initial comment</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 99</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_eigenvalues'>write_eigenvalues</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
+  <span class='id identifier rubyid_ssa'>ssa</span> <span class='op'>=</span> <span class='ivar'>@stationary_solution</span><span class='lbracket'>[</span><span class='symbol'>:steady_state_analisys</span><span class='rbracket'>]</span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'># </span><span class='embexpr_beg'>#{</span><span class='ivar'>@model_name</span><span class='embexpr_end'>}</span><span class='tstring_content'> Eigenvalues analysis - </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_content'> - MX Version: </span><span class='embexpr_beg'>#{</span><span class='const'>MECHATRONIX</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_desc'>desc</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:headers_eival</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:eigenvalues</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span>
+      <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:eigenvalues</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_c'>c</span><span class='lbracket'>[</span><span class='id identifier rubyid_r'>r</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_eigenvectors-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_eigenvectors</strong>(filename, desc = &quot;&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Writes the DS igenvectors to a file, as a space separated table
+with column names in the first line. The file begins with an initial
+comment line containing the present date and the library version.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>path of the output file to be written</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>desc</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>optional description appended to the initial comment</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 118</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_eigenvectors'>write_eigenvectors</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
+  <span class='id identifier rubyid_ssa'>ssa</span> <span class='op'>=</span> <span class='ivar'>@stationary_solution</span><span class='lbracket'>[</span><span class='symbol'>:steady_state_analisys</span><span class='rbracket'>]</span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'># </span><span class='embexpr_beg'>#{</span><span class='ivar'>@model_name</span><span class='embexpr_end'>}</span><span class='tstring_content'> Eigenvectors table - </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_content'> - MX Version: </span><span class='embexpr_beg'>#{</span><span class='const'>MECHATRONIX</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_desc'>desc</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:headers_eivec</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:eigenvectors</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span>
+      <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:eigenvectors</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_c'>c</span><span class='lbracket'>[</span><span class='id identifier rubyid_r'>r</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_ode_solution-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_ode_solution</strong>(filename, desc = &quot;&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Writes the DS ODE solution to a file, as a space separated table
+with column names in the first line. The file begins with an initial
+comment line containing the present date and the library version.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>path of the output file to be written</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>desc</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>optional description appended to the initial comment</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 136</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_ode_solution'>write_ode_solution</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
+  <span class='comment'># Prepare headers
+</span>  <span class='id identifier rubyid_comment'>comment</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'># </span><span class='embexpr_beg'>#{</span><span class='ivar'>@model_name</span><span class='embexpr_end'>}</span><span class='tstring_content'> forward integration analysis - </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_content'> - MX Version: </span><span class='embexpr_beg'>#{</span><span class='const'>MECHATRONIX</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_desc'>desc</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='ivar'>@ode_solution</span><span class='lbracket'>[</span><span class='symbol'>:headers</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='ivar'>@ode_solution</span><span class='lbracket'>[</span><span class='symbol'>:data</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span>
+      <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='ivar'>@ode_solution</span><span class='lbracket'>[</span><span class='symbol'>:data</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_c'>c</span><span class='lbracket'>[</span><span class='id identifier rubyid_r'>r</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span> 
+  
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_stationary_result-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_stationary_result</strong>(filename, desc = &quot;&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Writes the DS stationary solution to a file, as a space separated table
+with column names in the first line. The file begins with an initial
+comment line containing the present date and the library version.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>path of the output file to be written</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>desc</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>optional description appended to the initial comment</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_stationary_result'>write_stationary_result</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
+  <span class='comment'># Prepare headers
+</span>  <span class='id identifier rubyid_ssa'>ssa</span> <span class='op'>=</span> <span class='ivar'>@stationary_solution</span><span class='lbracket'>[</span><span class='symbol'>:steady_state_analisys</span><span class='rbracket'>]</span>
+  
+  <span class='comment'># Save synthetic analysis
+</span>  <span class='id identifier rubyid_col_names'>col_names</span>  <span class='op'>=</span> <span class='qwords_beg'>%w|</span><span class='tstring_content'>eival_Re</span><span class='words_sep'> </span><span class='tstring_content'>eival_Im</span><span class='words_sep'>|</span> 
+  <span class='id identifier rubyid_col_names'>col_names</span> <span class='op'>+=</span> <span class='ivar'>@stationary_solution</span><span class='lbracket'>[</span><span class='symbol'>:state_names</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span> <span class='id identifier rubyid_n'>n</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_mag</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_col_names'>col_names</span> <span class='op'>+=</span> <span class='ivar'>@stationary_solution</span><span class='lbracket'>[</span><span class='symbol'>:state_names</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span> <span class='id identifier rubyid_n'>n</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_phase</span><span class='tstring_end'>&#39;</span></span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_n_eivec'>n_eivec</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:headers_eivec</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='op'>/</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+  <span class='id identifier rubyid_eivecs'>eivecs</span>  <span class='op'>=</span> <span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:eigenvectors</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_n_eivec'>n_eivec</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='comment'># Transpose the matrix
+</span>  <span class='id identifier rubyid_eivecs_t'>eivecs_t</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_eivecs'>eivecs</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span>
+    <span class='id identifier rubyid_eivecs_t'>eivecs_t</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_eivecs'>eivecs</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_c'>c</span><span class='lbracket'>[</span><span class='id identifier rubyid_r'>r</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+  
+  <span class='comment'># Write the data file, performing conversion from Re/Im to Mag/Phase
+</span>  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'># </span><span class='embexpr_beg'>#{</span><span class='ivar'>@model_name</span><span class='embexpr_end'>}</span><span class='tstring_content'> Eigenvalues synthetic analysis - </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_content'> - MX Version: </span><span class='embexpr_beg'>#{</span><span class='const'>MECHATRONIX</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_desc'>desc</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_col_names'>col_names</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='ivar'>@stationary_solution</span><span class='lbracket'>[</span><span class='symbol'>:state_names</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span>
+      <span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:eigenvalues</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_c'>c</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_ssa'>ssa</span><span class='lbracket'>[</span><span class='symbol'>:eigenvalues</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_c'>c</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_eivecs_t'>eivecs_t</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+        <span class='id identifier rubyid_line'>line</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='const'>Math</span><span class='op'>::</span><span class='id identifier rubyid_sqrt'>sqrt</span><span class='lparen'>(</span><span class='id identifier rubyid_eivecs_t'>eivecs_t</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>2</span><span class='op'>*</span><span class='id identifier rubyid_c'>c</span><span class='rbracket'>]</span> <span class='op'>**</span> <span class='int'>2</span> <span class='op'>+</span> <span class='id identifier rubyid_eivecs_t'>eivecs_t</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>2</span><span class='op'>*</span><span class='id identifier rubyid_c'>c</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>**</span> <span class='int'>2</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_line'>line</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='const'>Math</span><span class='op'>::</span><span class='id identifier rubyid_atan2'>atan2</span><span class='lparen'>(</span><span class='id identifier rubyid_eivecs_t'>eivecs_t</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>2</span><span class='op'>*</span><span class='id identifier rubyid_c'>c</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_eivecs_t'>eivecs_t</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>2</span><span class='op'>*</span><span class='id identifier rubyid_c'>c</span><span class='op'>+</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+      <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_line'>line</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\t</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>  
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Mar 26 13:09:14 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

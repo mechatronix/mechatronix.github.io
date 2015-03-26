@@ -1,0 +1,1029 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Dgraph
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Dgraph.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo;
+    
+    
+    <span class="title">Dgraph</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Dgraph
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Dgraph</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">mrbgems/mruby-mechatronix/mrblib/dgraph.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'><p>DataGraph is only supported on Mac.</p>
+</div>
+  </div>
+
+<p>Class for plotting simulation results with <a href="http://www.visualdatatools.com/DataGraph/">DataGraph</a></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'><p>Simple usage</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dg'>dg</span> <span class='op'>=</span> <span class='const'>Dgraph</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_dg'>dg</span><span class='period'>.</span><span class='id identifier rubyid_set_fields'>set_fields</span> <span class='qwords_beg'>%w(</span><span class='tstring_content'>a</span><span class='words_sep'> </span><span class='tstring_content'>b</span><span class='words_sep'> </span><span class='tstring_content'>c</span><span class='words_sep'>)</span>
+<span class='id identifier rubyid_dg'>dg</span><span class='period'>.</span><span class='id identifier rubyid_plot'>plot</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_dg'>dg</span><span class='period'>.</span><span class='id identifier rubyid_plot'>plot</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>a</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c</span><span class='tstring_end'>&quot;</span></span>
+<span class='int'>100</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>/</span> <span class='float'>10.0</span>
+  <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='const'>Math</span><span class='op'>::</span><span class='id identifier rubyid_sin'>sin</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_c'>c</span> <span class='op'>=</span> <span class='const'>Math</span><span class='op'>::</span><span class='id identifier rubyid_cos'>cos</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_dg'>dg</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span><span class='label'>a:</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='label'>b:</span><span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>c:</span><span class='id identifier rubyid_c'>c</span><span class='rbrace'>}</span>
+<span class='kw'>end</span>
+<span class='id identifier rubyid_dg'>dg</span><span class='period'>.</span><span class='id identifier rubyid_add_field'>add_field</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_dg'>dg</span><span class='period'>.</span><span class='id identifier rubyid_add_column'>add_column</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>3</span><span class='comma'>,</span><span class='int'>4</span><span class='comma'>,</span><span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dg'>dg</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'><p>With block</p>
+</div></p>
+      
+      <pre class="example code"><code>Dgraph.plot do |dg
+  dg.set_fields %w(a b c)
+  dg.plot &quot;a&quot;, &quot;b&quot;
+  dg.plot &quot;a&quot;, &quot;c&quot;
+  100.times do |i|
+    a = i / 10.0
+    b = Math::sin(a)
+    c = Math::cos(a)
+    dg &lt;&lt; {a:a, b:b, c:c}
+  end
+  dg.add_field &quot;z&quot;
+  dg.add_column(&quot;z&quot;, [1,2,3,4,5])
+end</code></pre>
+    
+  </div>
+
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>Bosetti</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="DGRAPH-constant" class="">DGRAPH =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/Applications/DataGraph.app/dgraphconnect</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#plot-class_method" title="plot (class method)">+ (Object) <strong>plot</strong>(path = DGRAPH) {|dg| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3C-instance_method" title="#&lt;&lt; (instance method)">- (Object) <strong>&lt;&lt;</strong>(hsh) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Append a hash of values, with keys representing the fields names and values representing the new points.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_column-instance_method" title="#add_column (instance method)">- (Object) <strong>add_column</strong>(name, ary) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Add a column of values for a given field name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_field-instance_method" title="#add_field (instance method)">- (Object) <strong>add_field</strong>(name) </a>
+    
+
+    
+      (also: #add_column_name)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Add a single column name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close-instance_method" title="#close (instance method)">- (Object) <strong>close</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Close DataGraph connection.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Dgraph) <strong>initialize</strong>(path = DGRAPH) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of Dgraph.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#plot-instance_method" title="#plot (instance method)">- (Object) <strong>plot</strong>(x, y) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Creates a new X-Y plot for two fields.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#puts-instance_method" title="#puts (instance method)">- (Object) <strong>puts</strong>(str) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Raw command to DataGraph.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_fields-instance_method" title="#set_fields (instance method)">- (Object) <strong>set_fields</strong>(*list) </a>
+    
+
+    
+      (also: #set_column_names)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Set a list of column names.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Dgraph (class)">Dgraph</a></span></tt>) <strong>initialize</strong>(path = DGRAPH) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a new instance of Dgraph</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>DGRAPH</span><span class='rparen'>)</span>
+  <span class='ivar'>@cmd</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
+  <span class='ivar'>@dg</span>  <span class='op'>=</span> <span class='const'>IO</span><span class='period'>.</span><span class='id identifier rubyid_popen'>popen</span><span class='lparen'>(</span><span class='ivar'>@cmd</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>w</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='ivar'>@fields</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new file</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delete column x</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delete column y</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stream on</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delete command 4</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_block_given?'>block_given?</span> <span class='kw'>then</span>
+    <span class='kw'>yield</span> <span class='ivar'>@dg</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="plot-class_method">
+  
+    + (<tt>Object</tt>) <strong>plot</strong>(path = DGRAPH) {|dg| ... }
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>dg</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_plot'>plot</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>DGRAPH</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_dg'>dg</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='kw'>yield</span> <span class='id identifier rubyid_dg'>dg</span>
+  <span class='id identifier rubyid_dg'>dg</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="<<-instance_method">
+  
+    - (<tt>Object</tt>) <strong>&lt;&lt;</strong>(hsh) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Append a hash of values, with keys representing the fields names and
+values representing the new points</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hsh</span>
+      
+      
+        <span class='type'>(<tt>{<span class='object_link'><a href="String.html" title="String (class)">String</a></span>=&gt;Numeric}</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the new point to be added</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='op'>&lt;&lt;</span><span class='lparen'>(</span><span class='id identifier rubyid_hsh'>hsh</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Need a Hash</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_hsh'>hsh</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span> <span class='const'>Hash</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>append </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_hsh'>hsh</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_hsh'>hsh</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>*end*</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_column-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_column</strong>(name, ary) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Add a column of values for a given field name</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the field name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>ary</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the field content</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_column'>add_column</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_ary'>ary</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Need an Array</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_ary'>ary</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span> <span class='const'>Array</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>append </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_ary'>ary</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>*end*</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_field-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_field</strong>(name) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='add_column_name-instance_method'>add_column_name</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Add a single column name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>a single field name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_field'>add_field</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new data column </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@fields</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_name'>name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close-instance_method">
+  
+    - (<tt>Object</tt>) <strong>close</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Close DataGraph connection</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 106</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="plot-instance_method">
+  
+    - (<tt>Object</tt>) <strong>plot</strong>(x, y) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Creates a new X-Y plot for two fields</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the X field name</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the Y field name</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_plot'>plot</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new plot</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>set X to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>set Y to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="puts-instance_method">
+  
+    - (<tt>Object</tt>) <strong>puts</strong>(str) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Raw command to DataGraph</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 101</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='rparen'>)</span>
+  <span class='ivar'>@dg</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_fields-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_fields</strong>(*list) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='set_column_names-instance_method'>set_column_names</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Set a list of column names.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>list</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>a comma-separated list of names</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/dgraph.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_fields'>set_fields</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_list'>list</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_list'>list</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_add_field'>add_field</span> <span class='id identifier rubyid_f'>f</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Mar 26 13:09:15 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>
