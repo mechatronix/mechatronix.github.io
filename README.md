@@ -1,2 +1,2 @@
-mechatronix.github.io
+pins.github.io
 =====================
