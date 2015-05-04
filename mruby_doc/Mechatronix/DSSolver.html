@@ -73,12 +73,12 @@
   
     <dt class="r1">Inherits:</dt>
     <dd class="r1">
-      <span class="inheritName"><span class='object_link'><a href="OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span></span>
+      <span class="inheritName"><span class='object_link'><a href="Solver.html" title="Mechatronix::Solver (class)">Solver</a></span></span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next"><span class='object_link'><a href="OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span></li>
+            <li class="next"><span class='object_link'><a href="Solver.html" title="Mechatronix::Solver (class)">Solver</a></span></li>
           
             <li class="next">Mechatronix::DSSolver</li>
           
@@ -96,9 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">mrblib/mechatronix_nocompile.rb<span class="defines">,<br />
-  mrbgems/mruby-mechatronix/mrblib/mechatronix.rb</span>
-</dd>
+    <dd class="r2 last">LibSources/mrblib/mechatronix_nocompile.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -132,6 +130,8 @@
   
   
     
+      <span class="note title readonly">readonly</span>
+    
     
   
   
@@ -158,6 +158,8 @@
   
   
     
+      <span class="note title readonly">readonly</span>
+    
     
   
   
@@ -176,11 +178,6 @@
 
 
 
-  
-  
-  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="OCPSolver.html#data-instance_method" title="Mechatronix::OCPSolver#data (method)">#data</a></span>, <span class='object_link'><a href="OCPSolver.html#dylib_path-instance_method" title="Mechatronix::OCPSolver#dylib_path (method)">#dylib_path</a></span>, <span class='object_link'><a href="OCPSolver.html#id-instance_method" title="Mechatronix::OCPSolver#id (method)">#id</a></span>, <span class='object_link'><a href="OCPSolver.html#model_name-instance_method" title="Mechatronix::OCPSolver#model_name (method)">#model_name</a></span>, <span class='object_link'><a href="OCPSolver.html#ocp_solution-instance_method" title="Mechatronix::OCPSolver#ocp_solution (method)">#ocp_solution</a></span></p>
-
 
   
     <h2>
@@ -189,6 +186,144 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_initial_condition-instance_method" title="#get_initial_condition (instance method)">- (Hash) <strong>get_initial_condition</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns the initial condition as solution of the stationary problem.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#init_ODE-instance_method" title="#init_ODE (instance method)">- (Object) <strong>init_ODE</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Initialize ODE solution.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setup-instance_method" title="#setup (instance method)">- (String|False) <strong>setup</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Setup the solver and prepares for <span class='object_link'><a href="#solve_stationary-instance_method" title="Mechatronix::DSSolver#solve_stationary (method)">#solve_stationary</a></span> or <span class='object_link'><a href="#solve_ODE-instance_method" title="Mechatronix::DSSolver#solve_ODE (method)">#solve_ODE</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#solve_ODE-instance_method" title="#solve_ODE (instance method)">- (Object) <strong>solve_ODE</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Solve the ODE problem.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#solve_stationary-instance_method" title="#solve_stationary (instance method)">- (Hash) <strong>solve_stationary</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Computes solution.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#step_ODE-instance_method" title="#step_ODE (instance method)">- (Object) <strong>step_ODE</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Make a single step for the ODE solution.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -294,12 +429,12 @@
   
   
   
-  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="OCPSolver.html#initialize-instance_method" title="Mechatronix::OCPSolver#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="OCPSolver.html#length-instance_method" title="Mechatronix::OCPSolver#length (method)">#length</a></span>, <span class='object_link'><a href="OCPSolver.html#load_solution-instance_method" title="Mechatronix::OCPSolver#load_solution (method)">#load_solution</a></span>, <span class='object_link'><a href="OCPSolver.html#partial_table-instance_method" title="Mechatronix::OCPSolver#partial_table (method)">#partial_table</a></span>, <span class='object_link'><a href="OCPSolver.html#save_solution-instance_method" title="Mechatronix::OCPSolver#save_solution (method)">#save_solution</a></span>, <span class='object_link'><a href="OCPSolver.html#write_ocp_solution-instance_method" title="Mechatronix::OCPSolver#write_ocp_solution (method)">#write_ocp_solution</a></span></p>
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Solver.html" title="Mechatronix::Solver (class)">Solver</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Solver.html#initialize-instance_method" title="Mechatronix::Solver#initialize (method)">#initialize</a></span></p>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
-    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="OCPSolver.html#initialize-instance_method" title="Mechatronix::OCPSolver#initialize (method)">Mechatronix::OCPSolver</a></span></p>
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="Solver.html#initialize-instance_method" title="Mechatronix::Solver#initialize (method)">Mechatronix::Solver</a></span></p>
   
 </div>
 
@@ -307,11 +442,11 @@
     <h2>Instance Attribute Details</h2>
     
       
-      <span id="ode_solution=-instance_method"></span>
+      <span id=""></span>
       <div class="method_details first">
   <h3 class="signature first" id="ode_solution-instance_method">
   
-    - (<tt>Object</tt>) <strong>ode_solution</strong> 
+    - (<tt>Object</tt>) <strong>ode_solution</strong>  <span class="extras">(readonly)</span>
   
 
   
@@ -333,12 +468,12 @@
       <pre class="lines">
 
 
-54
-55
-56</pre>
+169
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 169</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ode_solution'>ode_solution</span>
   <span class='ivar'>@ode_solution</span>
@@ -349,11 +484,11 @@
 </div>
     
       
-      <span id="stationary_solution=-instance_method"></span>
+      <span id=""></span>
       <div class="method_details ">
   <h3 class="signature " id="stationary_solution-instance_method">
   
-    - (<tt>Object</tt>) <strong>stationary_solution</strong> 
+    - (<tt>Object</tt>) <strong>stationary_solution</strong>  <span class="extras">(readonly)</span>
   
 
   
@@ -375,12 +510,12 @@
       <pre class="lines">
 
 
-54
-55
-56</pre>
+169
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 169</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stationary_solution'>stationary_solution</span>
   <span class='ivar'>@stationary_solution</span>
@@ -398,7 +533,274 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="write_eigenvalues-instance_method">
+  <h3 class="signature first" id="get_initial_condition-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>get_initial_condition</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns the initial condition as solution of the stationary problem.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the solution</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 188</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="init_ODE-instance_method">
+  
+    - (<tt>Object</tt>) <strong>init_ODE</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Initialize ODE solution.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 179</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="setup-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span>|False</tt>) <strong>setup</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Setup the solver and prepares for <span class='object_link'><a href="#solve_stationary-instance_method" title="Mechatronix::DSSolver#solve_stationary (method)">#solve_stationary</a></span> or <span class='object_link'><a href="#solve_ODE-instance_method" title="Mechatronix::DSSolver#solve_ODE (method)">#solve_ODE</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span>|False</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the setup output, or false in case of error</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 171</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="solve_ODE-instance_method">
+  
+    - (<tt>Object</tt>) <strong>solve_ODE</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Solve the ODE problem</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 185</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="solve_stationary-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>solve_stationary</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Computes solution.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>returns the complete stationary solution, also available in <code>@ds_solution</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 175</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="step_ODE-instance_method">
+  
+    - (<tt>Object</tt>) <strong>step_ODE</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Make a single step for the ODE solution</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 182</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_eigenvalues-instance_method">
   
     - (<tt>Object</tt>) <strong>write_eigenvalues</strong>(filename, desc = &quot;&quot;) 
   
@@ -460,21 +862,21 @@ comment line containing the present date and the library version.</p>
       <pre class="lines">
 
 
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110</pre>
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 99</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 235</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_eigenvalues'>write_eigenvalues</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
@@ -556,21 +958,21 @@ comment line containing the present date and the library version.</p>
       <pre class="lines">
 
 
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129</pre>
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 118</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 254</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_eigenvectors'>write_eigenvectors</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
@@ -652,22 +1054,22 @@ comment line containing the present date and the library version.</p>
       <pre class="lines">
 
 
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148</pre>
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 272</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_ode_solution'>write_ode_solution</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
@@ -750,41 +1152,41 @@ comment line containing the present date and the library version.</p>
       <pre class="lines">
 
 
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92</pre>
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/mechatronix_nocompile.rb', line 197</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_stationary_result'>write_stationary_result</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='id identifier rubyid_desc'>desc</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_now'>now</span><span class='op'>=</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
@@ -828,7 +1230,7 @@ comment line containing the present date and the library version.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Mar 26 13:09:14 2015 by
+  Generated on Mon May  4 15:35:25 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.0.0).
 </div>

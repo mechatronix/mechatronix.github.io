@@ -94,7 +94,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">mrblib/mechatronix_nocompile.rb</dd>
+    <dd class="r2 last">LibSources/mrblib/parametric_analysis_nocompile.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -137,6 +137,32 @@ problem, providing a high-level interface.</p>
 
   <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
   <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#multi_process-instance_method" title="#multi_process (instance method)">- (Object) <strong>multi_process</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>if <code>@multi_process</code> is not false nor 1, runs each analysis in a separate   process, in parallel.</p>
+</div></span>
+  
+</li>
+
     
       <li class="public ">
   <span class="summary_signature">
@@ -195,6 +221,61 @@ problem, providing a high-level interface.</p>
 
 
 
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#from_stdin-class_method" title="from_stdin (class method)">+ (Hash) <strong>from_stdin</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Load problem data (a Hash) from standard input, assuming that it is a valid YAML representation.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_worker%3F-class_method" title="is_worker? (class method)">+ (Bool) <strong>is_worker?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Check whether current process is set to read data from STDIN and is    thus a worker process launched by a supervisor in a multi-processor   scenario.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
   
     <h2>
       Instance Method Summary
@@ -339,17 +420,19 @@ problem, providing a high-level interface.</p>
       <pre class="lines">
 
 
-269
-270
-271
-272
-273</pre>
+47
+48
+49
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/parametric_analysis_nocompile.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_problem_pars'>problem_pars</span> <span class='op'>=</span> <span class='const'>Mechatronix</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Argument must be a Hash</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_problem_pars'>problem_pars</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:to_hash</span>
+  <span class='ivar'>@multi_process</span> <span class='op'>=</span> <span class='kw'>false</span>
   <span class='ivar'>@problem_pars</span> <span class='op'>=</span> <span class='id identifier rubyid_problem_pars'>problem_pars</span><span class='period'>.</span><span class='const'>Parameters</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span>
   <span class='ivar'>@parameters</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
@@ -364,9 +447,52 @@ problem, providing a high-level interface.</p>
     <h2>Instance Attribute Details</h2>
     
       
-      <span id="parameters=-instance_method"></span>
+      <span id="multi_process=-instance_method"></span>
       <div class="method_details first">
-  <h3 class="signature first" id="parameters-instance_method">
+  <h3 class="signature first" id="multi_process-instance_method">
+  
+    - (<tt>Object</tt>) <strong>multi_process</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>if <code>@multi_process</code> is not false nor 1, runs each analysis in a separate
+  process, in parallel</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/parametric_analysis_nocompile.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_multi_process'>multi_process</span>
+  <span class='ivar'>@multi_process</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="parameters=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="parameters-instance_method">
   
     - (<tt>Object</tt>) <strong>parameters</strong> 
   
@@ -390,12 +516,12 @@ problem, providing a high-level interface.</p>
       <pre class="lines">
 
 
-265
-266
-267</pre>
+21
+22
+23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 265</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/parametric_analysis_nocompile.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parameters'>parameters</span>
   <span class='ivar'>@parameters</span>
@@ -432,12 +558,12 @@ problem, providing a high-level interface.</p>
       <pre class="lines">
 
 
-263
-264
-265</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/parametric_analysis_nocompile.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_solver'>solver</span>
   <span class='ivar'>@solver</span>
@@ -449,6 +575,137 @@ problem, providing a high-level interface.</p>
     
   </div>
 
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="from_stdin-class_method">
+  
+    + (<tt>Hash</tt>) <strong>from_stdin</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Load problem data (a Hash) from standard input, assuming that it is
+a valid YAML representation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>the data loaded from STDIN</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/parametric_analysis_nocompile.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_stdin'>from_stdin</span>
+  <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>while</span> <span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='const'>STDIN</span><span class='period'>.</span><span class='id identifier rubyid_gets'>gets</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_payload'>payload</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_line'>line</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='const'>YAML</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_payload'>payload</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_worker?-class_method">
+  
+    + (<tt>Bool</tt>) <strong>is_worker?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Check whether current process is set to read data from STDIN and is 
+  thus a worker process launched by a supervisor in a multi-processor
+  scenario.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bool</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>true if the argument vector include a lone hyphen (-)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/parametric_analysis_nocompile.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_is_worker?'>is_worker?</span>
+  <span class='kw'>return</span> <span class='const'>ARGV</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -496,14 +753,14 @@ problem, providing a high-level interface.</p>
       <pre class="lines">
 
 
-287
-288
-289
-290
-291</pre>
+66
+67
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 287</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/parametric_analysis_nocompile.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_combinations'>combinations</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -619,36 +876,44 @@ end</code></pre>
       <pre class="lines">
 
 
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313
-314
-315
-316</pre>
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/mechatronix_nocompile.rb', line 303</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/parametric_analysis_nocompile.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Need a block!</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
   <span class='kw'>unless</span> <span class='ivar'>@solver</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>OCPSolver</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='ivar'>@solver</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>DSSolver</span><span class='rparen'>)</span> <span class='kw'>then</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Set solver to a valid OCPSolver or DSSolver, first!</span><span class='tstring_end'>&quot;</span></span> 
   <span class='kw'>end</span>
-
+  
   <span class='id identifier rubyid_combine'>combine</span><span class='lparen'>(</span><span class='ivar'>@parameters</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_combination'>combination</span><span class='op'>|</span>
-    <span class='ivar'>@parameters</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
-      <span class='ivar'>@solver</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>Parameters</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_combination'>combination</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='ivar'>@multi_process</span> <span class='kw'>then</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Multi-process not yet supported</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@parameters</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+        <span class='ivar'>@solver</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>Parameters</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_combination'>combination</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+      <span class='kw'>end</span>
+      <span class='ivar'>@solver</span><span class='period'>.</span><span class='id identifier rubyid_setup'>setup</span>
+      <span class='kw'>yield</span> <span class='ivar'>@solver</span><span class='comma'>,</span> <span class='id identifier rubyid_combination'>combination</span>
     <span class='kw'>end</span>
-    <span class='ivar'>@solver</span><span class='period'>.</span><span class='id identifier rubyid_setup'>setup</span>
-    <span class='kw'>yield</span> <span class='ivar'>@solver</span><span class='comma'>,</span> <span class='id identifier rubyid_combination'>combination</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -661,7 +926,7 @@ end</code></pre>
 </div>
 
     <div id="footer">
-  Generated on Thu Mar 26 13:09:15 2015 by
+  Generated on Mon May  4 15:35:25 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.0.0).
 </div>

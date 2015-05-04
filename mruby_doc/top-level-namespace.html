@@ -94,6 +94,102 @@
   
 </p>
 
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="LICENSES-constant" class="">LICENSES =
+          
+        </dt>
+        <dd><pre class="code"><span class='heredoc_beg'>&lt;&lt;-EOL</span>
+<span class='tstring_content'>This program is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of  
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.            
+                                                                                                                     
+Copyright (C) 2011                                              
+                                                                
+                                                                
+Enrico Bertolazzi, Francesco Biral, Paolo Bosetti               
+Dipartimento di Ingegneria Industriale              
+Universita` degli Studi di Trento                               
+Via Sommarive 9, I-38123 Trento                                  
+email: enrico.bertolazzi@unitn.it                               
+       francesco.biral@unitn.it
+       paolo.bosetti@unitn.it                            
+                                                                
+                                                                
+
+This program is not a free software; you cannot redistribute it and/or modify 
+it. You can use it for free if you are explicitly allowed by authors.                                                
+                                                                     
+                                    
+This program includes, or relies on the availablility of, the following third-
+party software libraries:
+
+- OpenBLAS (on Windows)
+- mruby
+- PCRE3 (on Windows)
+- LibYAML 
+- LibGFortran (on Windows)
+
+License copies for these 3-rd party software libraries can be found here:
+
+OpenBLAS (https://github.com/xianyi/OpenBLAS):
+----------------------------------------------
+Copyright (c) 2011,2012 Lab of Parallel Software and Computational Science,ISCAS
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+   1. Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+
+   2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in
+      the documentation and/or other materials provided with the
+      distribution.
+   3. Neither the name of the ISCAS nor the names of its contributors may 
+      be used to endorse or promote products derived from this software 
+      without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE 
+USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+mruby (http://github.com/mruby/mruby)
+-------------------------------------
+See on http://opensource.org/licenses/MIT
+
+
+PCRE3
+-----
+See on http://www.pcre.org/licence.txt
+
+
+LibYAML
+-------
+See on http://opensource.org/licenses/MIT
+
+
+LibGFortran
+-----------
+See on http://www.gnu.org/licenses/gpl-2.0.html
+
+</span><span class='heredoc_end'>EOL</span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -212,7 +308,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#shell-instance_method" title="#shell (instance method)">- (String) <strong>shell</strong>(cmd) </a>
+      <a href="top-level-namespace.html#shell-instance_method" title="#shell (instance method)">- (String) <strong>shell</strong>(cmd, input = nil) </a>
     
 
     
@@ -272,7 +368,7 @@
 22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/utility.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/utility.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_licenses'>licenses</span>
   <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>license</span><span class='tstring_end'>&#39;</span></span>
@@ -386,15 +482,15 @@ instance of <span class='object_link'><a href="Mechatronix/Container.html" title
       <pre class="lines">
 
 
-148
-149
-150
-151
-152
-153</pre>
+124
+125
+126
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/mechatronix.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_mechatronix'>mechatronix</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='lparen'>(</span><span class='const'>Mechatronix</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span> <span class='op'>&amp;&amp;</span> <span class='const'>Mechatronix</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Mechatronix</span><span class='op'>::</span><span class='const'>Container</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>then</span>
@@ -502,7 +598,7 @@ the caller file.</p>
 34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/utility.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/utility.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_require_relative'>require_relative</span><span class='lparen'>(</span><span class='id identifier rubyid_rel_path'>rel_path</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_require'>require</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[\\\/]+$</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_rel_path'>rel_path</span>
@@ -598,7 +694,7 @@ prints it to standard output</p>
 </pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrblib/utility.rb', line 3</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrblib/utility.rb', line 3</span>
 
 </pre>
     </td>
@@ -609,7 +705,7 @@ prints it to standard output</p>
       <div class="method_details ">
   <h3 class="signature " id="shell-instance_method">
   
-    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>shell</strong>(cmd) 
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>shell</strong>(cmd, input = nil) 
   
 
   
@@ -660,6 +756,23 @@ must be supported by the OS!)</p>
       
     </li>
   
+    <li>
+      
+        <span class='name'>input</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>the standard input to be passed to cmd.</p>
+</div>
+      
+    </li>
+  
 </ul>
 
 <p class="tag_title">Returns:</p>
@@ -673,7 +786,7 @@ must be supported by the OS!)</p>
       
       
         &mdash;
-        <div class='inline'><p>the command output</p>
+        <div class='inline'><p>if input=nil, an Array with the command output and the command exit code, otherwise a Fixnum representing the command exit code</p>
 </div>
       
     </li>
@@ -704,7 +817,7 @@ must be supported by the OS!)</p>
 </pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrbgems/mruby-shell/mrblib/shell.rb', line 11</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrbgems/mruby-shell/mrblib/shell.rb', line 12</span>
 
 </pre>
     </td>
@@ -717,7 +830,7 @@ must be supported by the OS!)</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Mar 26 13:09:14 2015 by
+  Generated on Mon May  4 15:35:24 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.0.0).
 </div>

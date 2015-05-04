@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: DATA_FILES
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.DATA_FILES.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: DATA_FILES</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>How to load data files in pins</h1>
+
+<p>This introduction explains how to properly load data files into a pins script, either by using the <code>require &quot;data/problem_data.rb&quot;</code> way, or by using a YAML file.</p>
+
+<h2>Data in ruby scripts</h2>
+
+<p>This is the default method for loading problem data: whenever you create a new problem in Maple and generate the files, a template pins script and another ruby script within <code>data</code> are created. </p>
+
+<p>When executed, the pins script loads the data script by the instruction</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data/problem_data.rb</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>Then, a new instance of the solver is created: </p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_ocp'>ocp</span> <span class='op'>=</span> <span class='const'>Mechatronix</span><span class='op'>::</span><span class='const'>OCPSolver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+</code></pre>
+
+<p>To better understand how it works, you must remember that the <code>Mechatronix::OCPSolver#new</code> method has an optional argument, which must be a Hash containing the problem data, with the appropriate keys. <strong>If this value is missing</strong>, the initialization searches for available data in the globally visible <code>Mechatronix.content</code> variable.</p>
+
+<p>Whenever you are using the syntax</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_mechatronix'>mechatronix</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_data'>data</span><span class='op'>|</span>
+  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>FirstPar</span>  <span class='op'>=</span> <span class='int'>10</span>
+  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>SecondPar</span> <span class='op'>=</span> <span class='int'>20</span>
+  <span class='comment'># ...
+</span><span class='kw'>end</span>
+</code></pre>
+
+<p>you are actually using some commodity methods for writing keys into the globally visible <code>Mechatronix.content</code> (an instance of <code>Mechatronix::Container</code>, child class of <code>Hash</code>), so that — according to the previous example — the key <code>Mechatronix.content.FirstPar</code> has a value of 10 anywhere in your scripts.</p>
+
+<p>This apparently cumbersome procedure allows you to do something that would be otherwise impossible: sharing values between different files. In fact, variables defined at top-level have a file-local scope: if you define any variable in file B required by file A, that variable is only visible in B and <strong>not in A</strong>.</p>
+
+<p>So, thanks to this approach, values written into <code>Mechatronix.content</code> in file B, are perfectly visible from within the file A (an executable script) that is requiring the file B (a data file). The <code>mechatronix do |d| ... end</code> writings (note the lowercase <code>mechatronix</code>) is thus a commodity method for ensuring to properly access the keys of <code>Mechatronix.content</code> (whic, by default, <strong>need to start with an uppercase character</strong>).</p>
+
+<h3>Complex case: multiple data files</h3>
+
+<p>The mechanism above illustrated also allows to split the problem data structure over multiple files, giving you fine-tuned control. So the main executable script can <code>require</code> a first, top-level data script like the following:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_include'>include</span> <span class='const'>Mechatronix</span>
+
+<span class='comment'># Auxiliary values: these values have a file-local scope, 
+</span><span class='comment'># i.e. they are only visible here!
+</span><span class='id identifier rubyid_epsi_max'>epsi_max</span> <span class='op'>=</span> <span class='float'>0.01</span>
+<span class='id identifier rubyid_tol_max'>tol_max</span>  <span class='op'>=</span> <span class='float'>0.01</span>
+<span class='id identifier rubyid_ubMax'>ubMax</span>    <span class='op'>=</span> <span class='int'>2</span>
+<span class='id identifier rubyid_uaMax'>uaMax</span>    <span class='op'>=</span> <span class='int'>10</span>
+
+
+<span class='comment'># Setting data into Mechatronix.content
+</span><span class='id identifier rubyid_mechatronix'>mechatronix</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_data'>data</span><span class='op'>|</span>
+  <span class='comment'># setup solver
+</span>  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>Solver</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:max_iter</span>  <span class='op'>=&gt;</span> <span class='int'>300</span><span class='comma'>,</span>  
+    <span class='symbol'>:tolerance</span> <span class='op'>=&gt;</span> <span class='float'>1e-9</span><span class='comma'>,</span>
+  <span class='rbrace'>}</span>
+
+  <span class='comment'># Boundary Conditions
+</span>  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>BoundaryConditions</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:initial_x</span> <span class='op'>=&gt;</span> <span class='const'>SET</span><span class='comma'>,</span>
+    <span class='symbol'>:initial_v</span> <span class='op'>=&gt;</span> <span class='const'>SET</span><span class='comma'>,</span>
+    <span class='symbol'>:final_x</span>   <span class='op'>=&gt;</span> <span class='const'>SET</span><span class='comma'>,</span>
+    <span class='symbol'>:final_v</span>   <span class='op'>=&gt;</span> <span class='const'>SET</span><span class='comma'>,</span>
+  <span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>Parameters</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+
+    <span class='comment'># Model Parameters
+</span>    <span class='symbol'>:alpha</span> <span class='op'>=&gt;</span> <span class='float'>0.3</span><span class='comma'>,</span>
+    <span class='symbol'>:beta</span>  <span class='op'>=&gt;</span> <span class='float'>0.14</span><span class='comma'>,</span>
+    <span class='symbol'>:gm</span>    <span class='op'>=&gt;</span> <span class='float'>0.16</span><span class='comma'>,</span>
+    <span class='symbol'>:uaMax</span> <span class='op'>=&gt;</span> <span class='int'>10</span><span class='comma'>,</span>
+    <span class='symbol'>:ubMax</span> <span class='op'>=&gt;</span> <span class='int'>2</span><span class='comma'>,</span>
+
+    <span class='comment'># Guess Parameters
+</span>
+    <span class='comment'># Boundary Conditions
+</span>    <span class='symbol'>:v_f</span> <span class='op'>=&gt;</span> <span class='int'>0</span><span class='comma'>,</span>
+    <span class='symbol'>:v_i</span> <span class='op'>=&gt;</span> <span class='int'>0</span><span class='comma'>,</span>
+    <span class='symbol'>:x_f</span> <span class='op'>=&gt;</span> <span class='int'>6</span><span class='comma'>,</span>
+    <span class='symbol'>:x_i</span> <span class='op'>=&gt;</span> <span class='int'>0</span><span class='comma'>,</span>
+
+    <span class='comment'># Post Processing Parameters
+</span>
+    <span class='comment'># User Function Parameters
+</span>
+    <span class='comment'># Continuation Parameters
+</span>    <span class='symbol'>:tol_max</span>  <span class='op'>=&gt;</span> <span class='float'>0.01</span><span class='comma'>,</span>
+    <span class='symbol'>:tol_min</span>  <span class='op'>=&gt;</span> <span class='float'>0.001</span><span class='comma'>,</span>
+    <span class='symbol'>:epsi_max</span> <span class='op'>=&gt;</span> <span class='float'>0.01</span><span class='comma'>,</span>
+    <span class='symbol'>:epsi_min</span> <span class='op'>=&gt;</span> <span class='float'>0.0001</span><span class='comma'>,</span>
+
+    <span class='comment'># Constraints Parameters
+</span>  <span class='rbrace'>}</span>
+
+  <span class='comment'># Controls
+</span>  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>Controls</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>Controls</span><span class='lbracket'>[</span><span class='symbol'>:uaControl</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:type</span>      <span class='op'>=&gt;</span> <span class='const'>U_COS_LOGARITHMIC</span><span class='comma'>,</span>
+    <span class='symbol'>:epsilon</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid_epsi_max'>epsi_max</span><span class='comma'>,</span>
+    <span class='symbol'>:tolerance</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tol_max'>tol_max</span>
+  <span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>Controls</span><span class='lbracket'>[</span><span class='symbol'>:ubControl</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:type</span>      <span class='op'>=&gt;</span> <span class='const'>U_COS_LOGARITHMIC</span><span class='comma'>,</span>
+    <span class='symbol'>:epsilon</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid_epsi_max'>epsi_max</span><span class='comma'>,</span>
+    <span class='symbol'>:tolerance</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_tol_max'>tol_max</span>
+  <span class='rbrace'>}</span>
+
+<span class='kw'>end</span>
+
+
+<span class='id identifier rubyid_require_relative'>require_relative</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./mesh.rb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+</code></pre>
+
+<p>In turn, on the very last line, this top-level data script requires another data script, <code>mesh.rb</code>, describing the mesh and <strong>located in the same folder than the calling data file</strong>:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_mechatronix'>mechatronix</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_data'>data</span><span class='op'>|</span>
+  <span class='comment'># User defined classes initialization
+</span>  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='const'>Mesh</span> <span class='op'>=</span> 
+  <span class='lbrace'>{</span>
+    <span class='symbol'>:s0</span>       <span class='op'>=&gt;</span> <span class='int'>0</span><span class='comma'>,</span>
+    <span class='symbol'>:segments</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+
+      <span class='lbrace'>{</span>
+        <span class='symbol'>:n</span>      <span class='op'>=&gt;</span> <span class='int'>25</span><span class='comma'>,</span>
+        <span class='symbol'>:length</span> <span class='op'>=&gt;</span> <span class='float'>0.25</span><span class='comma'>,</span>
+      <span class='rbrace'>}</span><span class='comma'>,</span>
+
+      <span class='lbrace'>{</span>
+        <span class='symbol'>:n</span>      <span class='op'>=&gt;</span> <span class='int'>3000</span><span class='comma'>,</span>
+        <span class='symbol'>:length</span> <span class='op'>=&gt;</span> <span class='float'>0.75</span><span class='comma'>,</span>
+      <span class='rbrace'>}</span><span class='comma'>,</span>
+
+      <span class='lbrace'>{</span>
+        <span class='symbol'>:n</span>      <span class='op'>=&gt;</span> <span class='int'>100</span><span class='comma'>,</span>
+        <span class='symbol'>:length</span> <span class='op'>=&gt;</span> <span class='float'>3.8</span><span class='comma'>,</span>
+      <span class='rbrace'>}</span><span class='comma'>,</span>
+    <span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Note that the <code>require</code> command in pins (as well as in ruby) needs a path <em>relative to the current executable script</em>. For this reason, if you want to require one or more other scripts from the main data file, you shall use the <code>require_relative</code> pins command, which starts searching for the file to be loaded from the path of the <em>current script</em>, rather than that of the <em>current executable</em>.</p>
+
+<h2>Data in YAML files</h2>
+
+<p>Sometimes, you might prefer to serialize the data structure in a neutral format as <a href="http://yaml.org">YAML</a>. To do so, you can serialize <code>Mechatronix.content</code> and write the result to a file quite easily:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data.yaml</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span> <span class='const'>YAML</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='const'>Mechatronix</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='period'>.</span><span class='id identifier rubyid_to_hash'>to_hash</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+</code></pre>
+
+<p>This is creating a YAML-formatted file that you can edit or pass to other scripts/languages (there are YAML interfaces for C/C++, Matlab, Python, etc).</p>
+
+<p>To load the YAML data file back into the <code>Mechatronix::OCPSolver</code>, you need then to do:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_my_data'>my_data</span> <span class='op'>=</span> <span class='const'>Mechatronix</span><span class='op'>::</span><span class='const'>Container</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_my_data'>my_data</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>data.yaml</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span> <span class='const'>YAML</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+<span class='id identifier rubyid_ocp'>ocp</span> <span class='op'>=</span> <span class='const'>Mechatronix</span><span class='op'>::</span><span class='const'>OCPSolver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_my_data'>my_data</span>
+</code></pre>
+</div></div>
+
+    <div id="footer">
+  Generated on Mon May  4 15:35:24 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

@@ -79,38 +79,21 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">mrblib/mechatronix_nocompile.rb<span class="defines">,<br />
-  mrblib/mx_road3d.rb,<br /> mrbgems/mruby-mechatronix/mrblib/mechatronix.rb,<br /> mrbgems/mruby-mechatronix/mrblib/mechatronix-mesh.rb,<br /> mrbgems/mruby-mechatronix/mrblib/mechatronix-road.rb,<br /> mrbgems/mruby-mechatronix/mrblib/mechatronix-container.rb</span>
+    <dd class="r1 last">LibSources/mrblib/mechatronix_nocompile.rb<span class="defines">,<br />
+  LibSources/mrblib/mx_road3d.rb,<br /> LibSources/mrblib/parametric_analysis_nocompile.rb,<br /> LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix.rb,<br /> LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix-mesh.rb,<br /> LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix-road.rb,<br /> LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix-container.rb,<br /> LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix-function_class.rb</span>
 </dd>
   
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
+<div class="docstring">
   <div class="discussion">
-    <p>Main module containing support classes and functions for managing Optimal 
-Control Problem (OCP) and (Dynamical Systems (DS) problems.</p>
-
+    
 
   </div>
 </div>
 <div class="tags">
   
-<p class="tag_title">Author:</p>
-<ul class="author">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'><p>Bertolazzi Biral Bosetti</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
@@ -118,7 +101,7 @@ Control Problem (OCP) and (Dynamical Systems (DS) problems.</p>
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Mechatronix/Container.html" title="Mechatronix::Container (class)">Container</a></span>, <span class='object_link'><a href="Mechatronix/DSSolver.html" title="Mechatronix::DSSolver (class)">DSSolver</a></span>, <span class='object_link'><a href="Mechatronix/Mesh.html" title="Mechatronix::Mesh (class)">Mesh</a></span>, <span class='object_link'><a href="Mechatronix/OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span>, <span class='object_link'><a href="Mechatronix/ParametricAnalysis.html" title="Mechatronix::ParametricAnalysis (class)">ParametricAnalysis</a></span>, <span class='object_link'><a href="Mechatronix/Road.html" title="Mechatronix::Road (class)">Road</a></span>, <span class='object_link'><a href="Mechatronix/ToolPath2D.html" title="Mechatronix::ToolPath2D (class)">ToolPath2D</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Mechatronix/Container.html" title="Mechatronix::Container (class)">Container</a></span>, <span class='object_link'><a href="Mechatronix/DSSolver.html" title="Mechatronix::DSSolver (class)">DSSolver</a></span>, <span class='object_link'><a href="Mechatronix/Mesh.html" title="Mechatronix::Mesh (class)">Mesh</a></span>, <span class='object_link'><a href="Mechatronix/OCPSolver.html" title="Mechatronix::OCPSolver (class)">OCPSolver</a></span>, <span class='object_link'><a href="Mechatronix/ParametricAnalysis.html" title="Mechatronix::ParametricAnalysis (class)">ParametricAnalysis</a></span>, <span class='object_link'><a href="Mechatronix/Road.html" title="Mechatronix::Road (class)">Road</a></span>, <span class='object_link'><a href="Mechatronix/Solver.html" title="Mechatronix::Solver (class)">Solver</a></span>, <span class='object_link'><a href="Mechatronix/ToolPath2D.html" title="Mechatronix::ToolPath2D (class)">ToolPath2D</a></span>
     
   
 </p>
@@ -355,6 +338,29 @@ Control Problem (OCP) and (Dynamical Systems (DS) problems.</p>
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#FunctionClassGenerator-class_method" title="FunctionClassGenerator (class method)">+ (Object) <strong>FunctionClassGenerator</strong>(description) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>---------------------------------------------------------------------------.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -405,7 +411,7 @@ Control Problem (OCP) and (Dynamical Systems (DS) problems.</p>
 9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/mechatronix.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='semicolon'>;</span>     <span class='cvar'>@@content</span><span class='semicolon'>;</span>     <span class='kw'>end</span></pre>
     </td>
@@ -456,9 +462,101 @@ Control Problem (OCP) and (Dynamical Systems (DS) problems.</p>
 6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mrbgems/mruby-mechatronix/mrblib/mechatronix.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_content='>content=</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='cvar'>@@content</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="FunctionClassGenerator-class_method">
+  
+    + (<tt>Object</tt>) <strong>FunctionClassGenerator</strong>(description) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <hr>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'LibSources/mrbgems/mruby-mechatronix/mrblib/mechatronix-function_class.rb', line 242</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='const'>FunctionClassGenerator</span><span class='lparen'>(</span> <span class='id identifier rubyid_description'>description</span> <span class='rparen'>)</span>
+  <span class='gvar'>$MECHATRONIX</span> <span class='op'>=</span> <span class='const'>Mechatronix</span><span class='op'>::</span><span class='const'>FunctionClassGeneratorForMerb</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_description'>description</span>
+  
+  <span class='id identifier rubyid_fname'>fname</span> <span class='op'>=</span> <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_fname'>fname</span>
+
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_clean_for_maple'>clean_for_maple</span>
+
+  <span class='comment'># costruisco file di comandi MAPLE
+</span>  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_template'>template</span> <span class='op'>=</span> <span class='gvar'>$MECHATRONIX_FUNCTION_CLASS_MAPLET</span>
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_analyze'>analyze</span>
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_write_to'>write_to</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_fname'>fname</span><span class='embexpr_end'>}</span><span class='tstring_content'>.maplet</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'>####$MECHATRONIX.convert(&quot;Mechatronix-function_class.maplet.tmpl&quot;,&quot;#{fname}.maplet&quot;)
+</span>
+  <span class='const'>IO</span><span class='period'>.</span><span class='id identifier rubyid_popen'>popen</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>maple </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_fname'>fname</span><span class='embexpr_end'>}</span><span class='tstring_content'>.maplet</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_io'>io</span><span class='op'>|</span> <span class='id identifier rubyid_io'>io</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span> <span class='rbrace'>}</span> <span class='comment'>##### TO BE SANED!
+</span>  <span class='comment'>#Kernel.`&quot;maple #{fname}.maplet&quot; #` per colorazione sintassi
+</span>
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_load_bodies'>load_bodies</span>
+
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_template'>template</span> <span class='op'>=</span> <span class='gvar'>$MECHATRONIX_FUNCTION_CLASS_HH</span>
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_analyze'>analyze</span>
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_write_to'>write_to</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_fname'>fname</span><span class='embexpr_end'>}</span><span class='tstring_content'>.hh</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_template'>template</span> <span class='op'>=</span> <span class='gvar'>$MECHATRONIX_FUNCTION_CLASS_CC</span>
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_analyze'>analyze</span>
+  <span class='gvar'>$MECHATRONIX</span><span class='period'>.</span><span class='id identifier rubyid_write_to'>write_to</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_fname'>fname</span><span class='embexpr_end'>}</span><span class='tstring_content'>.cc</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='comment'>#$MECHATRONIX.convert(&quot;Mechatronix-function_class.hh.tmpl&quot;,&quot;#{fname}.hh&quot;)
+</span>  <span class='comment'>#$MECHATRONIX.convert(&quot;Mechatronix-function_class.cc.tmpl&quot;,&quot;#{fname}.cc&quot;)
+</span><span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -469,7 +567,7 @@ Control Problem (OCP) and (Dynamical Systems (DS) problems.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Mar 26 13:09:14 2015 by
+  Generated on Mon May  4 15:35:24 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.0.0).
 </div>
